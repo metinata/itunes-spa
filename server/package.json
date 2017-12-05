@@ -1,0 +1,26 @@
+{
+  "name": "itunes-search-api",
+  "version": "1.0.0",
+  "description": "itunes search api",
+  "main": "index.js",
+  "author": "Metin Ata Yeter",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon --exec babel-node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.17.1",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "morgan": "^1.9.0",
+    "object-hash": "^1.2.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "nodemon": "^1.12.1"
+  }
+}
