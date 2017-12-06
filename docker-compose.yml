@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    container_name: client
+    command: npm run start
+    ports:
+      - 8080:8080
+    depends_on:
+      - server
+    volumes:
+     - ./app:/usr/src/app
+    environment:
+      NODE_ENV: development
+
+  server:
+    build: ./server
+    container_name: server
+    command: npm run start
+    ports:
+      - 3000:3000
+    depends_on:
+      - redis
+    volumes:
+      - ./server:/usr/src/app
+    environment:
+      NODE_ENV: development
+      REDIS: redis
+      EXPRESS_PORT: 3000
+
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports:
+      - 6379:6379

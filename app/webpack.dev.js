@@ -33,7 +33,10 @@ module.exports = {
         new HtmlWebpackPlugin({ template: 'index.html' })
     ],
     devServer: {
-        contentBase: './<%= pkg.src %>/',
+        port: 8080,
         historyApiFallback: true
+    },
+    watchOptions: {
+        poll: true
     }
 };
